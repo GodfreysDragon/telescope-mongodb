@@ -1,6 +1,140 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/telescope/compare/v4.14.2...4.x)
+## [Unreleased](https://github.com/laravel/telescope/compare/v5.2.2...5.x)
+
+## [v5.2.2](https://github.com/laravel/telescope/compare/v5.2.1...v5.2.2) - 2024-08-26
+
+* Revert "[5.x] Enhance Telescope Clear Method" by [@taylorotwell](https://github.com/taylorotwell) in https://github.com/laravel/telescope/pull/1510
+
+## [v5.2.1](https://github.com/laravel/telescope/compare/v5.2.0...v5.2.1) - 2024-08-20
+
+* Fix that multiple use of the same binding is only replaced once in the query by [@kohlerdominik](https://github.com/kohlerdominik) in https://github.com/laravel/telescope/pull/1503
+* [5.x] Enhance Telescope Clear Method by [@a1383n](https://github.com/a1383n) in https://github.com/laravel/telescope/pull/1507
+
+## [v5.2.0](https://github.com/laravel/telescope/compare/v5.1.1...v5.2.0) - 2024-08-02
+
+* add support for non-standard PDOs by [@macbookandrew](https://github.com/macbookandrew) in https://github.com/laravel/telescope/pull/1499
+
+## [v5.1.1](https://github.com/laravel/telescope/compare/v5.1.0...v5.1.1) - 2024-06-27
+
+* Revert "[5.x] Enhance query preview when using the pgsql driver" by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/telescope/pull/1491
+
+## [v5.1.0](https://github.com/laravel/telescope/compare/v5.0.5...v5.1.0) - 2024-06-17
+
+* [5.x] Add `isLog` to `IncomingEntry` by [@ngunyimacharia](https://github.com/ngunyimacharia) in https://github.com/laravel/telescope/pull/1485
+* [5.x] Enhance query preview when using the pgsql driver by [@morloderex](https://github.com/morloderex) in https://github.com/laravel/telescope/pull/1486
+
+## [v5.0.5](https://github.com/laravel/telescope/compare/v5.0.4...v5.0.5) - 2024-05-09
+
+* add queue connection customization to the Job self dispatch by [@ariaieboy](https://github.com/ariaieboy) in https://github.com/laravel/telescope/pull/1478
+
+## [v5.0.4](https://github.com/laravel/telescope/compare/v5.0.3...v5.0.4) - 2024-04-22
+
+* add config option for queue by [@ariaieboy](https://github.com/ariaieboy) in https://github.com/laravel/telescope/pull/1469
+
+## [v5.0.3](https://github.com/laravel/telescope/compare/v5.0.2...v5.0.3) - 2024-04-17
+
+* Revert "[5.x] feature: add vite integrity plugin" by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/telescope/pull/1464
+* Revert "[5.x] feature: move laravel mix setup to vite" by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/telescope/pull/1465
+
+## [v5.0.2](https://github.com/laravel/telescope/compare/v5.0.1...v5.0.2) - 2024-04-15
+
+* [5.x] feature: move laravel mix setup to vite by [@mmachatschek](https://github.com/mmachatschek) in https://github.com/laravel/telescope/pull/1460
+* [5.x] feature: add vite integrity plugin by [@mmachatschek](https://github.com/mmachatschek) in https://github.com/laravel/telescope/pull/1461
+
+## [v5.0.1](https://github.com/laravel/telescope/compare/v5.0.0...v5.0.1) - 2024-03-23
+
+* Fix misspelled property in base.scss by [@vanderb](https://github.com/vanderb) in https://github.com/laravel/telescope/pull/1447
+* [5.x] Make commands lazy by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/telescope/pull/1448
+
+## [v5.0.0](https://github.com/laravel/telescope/compare/v4.17.6...v5.0.0) - 2024-03-12
+
+* Retain exceptions data by [@senthilvelpro](https://github.com/senthilvelpro) in https://github.com/laravel/telescope/pull/950
+* Add a new "Clear Entries" button at the top of Telescope by [@AlexDanault](https://github.com/AlexDanault) in https://github.com/laravel/telescope/pull/1087
+* [5.x] Refactor routes by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/telescope/pull/1095
+* Always register migrations by [@MasterRO94](https://github.com/MasterRO94) in https://github.com/laravel/telescope/pull/1119
+* [5.x] Adds Laravel 11 support by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/telescope/pull/1420
+
+## [v4.17.6](https://github.com/laravel/telescope/compare/v4.17.5...v4.17.6) - 2024-02-08
+
+* [4.x] Add `use` to closure to pass in environment condition by [@LaurenceRawlings](https://github.com/LaurenceRawlings) in https://github.com/laravel/telescope/pull/1434
+
+## [v4.17.5](https://github.com/laravel/telescope/compare/v4.17.4...v4.17.5) - 2024-01-30
+
+* [4.x] Ignore duplicate tags by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/telescope/pull/1431
+
+## [v4.17.4](https://github.com/laravel/telescope/compare/v4.17.3...v4.17.4) - 2024-01-22
+
+* [4.x] Add primary keys to database tables by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/telescope/pull/1425
+
+## [v4.17.3](https://github.com/laravel/telescope/compare/v4.17.2...v4.17.3) - 2023-12-11
+
+* fix: clear all entries using chunks by [@skrskr](https://github.com/skrskr) in https://github.com/laravel/telescope/pull/1415
+* Ignore pulse and livewire by [@tomswinkels](https://github.com/tomswinkels) in https://github.com/laravel/telescope/pull/1418
+
+## [v4.17.2](https://github.com/laravel/telescope/compare/v4.17.1...v4.17.2) - 2023-11-01
+
+- Revert "Fixes RelatedEntries is not loaded after migrating from mix to vite" by [@taylorotwell](https://github.com/taylorotwell) in https://github.com/laravel/telescope/pull/1402
+- Revert "[4.x] Mix to Vite migration" by [@taylorotwell](https://github.com/taylorotwell) in https://github.com/laravel/telescope/pull/1403
+
+## [v4.17.1](https://github.com/laravel/telescope/compare/v4.17.0...v4.17.1) - 2023-11-01
+
+- Fixes RelatedEntries is not loaded after migrating from mix to vite by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/telescope/pull/1401
+
+## [v4.17.0](https://github.com/laravel/telescope/compare/v4.16.4...v4.17.0) - 2023-10-31
+
+- Mix to Vite migration by [@esurov](https://github.com/esurov) in https://github.com/laravel/telescope/pull/1391
+
+## [v4.16.4](https://github.com/laravel/telescope/compare/v4.16.3...v4.16.4) - 2023-09-25
+
+- Fix duplicated queries on multiple connections by [@February30th](https://github.com/February30th) in https://github.com/laravel/telescope/pull/1385
+
+## [v4.16.3](https://github.com/laravel/telescope/compare/v4.16.2...v4.16.3) - 2023-09-19
+
+- modified moment-timezone package version in package.json by [@yoonustehrani](https://github.com/yoonustehrani) in https://github.com/laravel/telescope/pull/1382
+
+## [v4.16.2](https://github.com/laravel/telescope/compare/v4.16.1...v4.16.2) - 2023-08-28
+
+- Test Improvements by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/telescope/pull/1378
+- Handle pushed jobs by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/telescope/pull/1379
+
+## [v4.16.1](https://github.com/laravel/telescope/compare/v4.16.0...v4.16.1) - 2023-08-11
+
+- Fix copy to clipboard button position on query preview by [@alissn](https://github.com/alissn) in https://github.com/laravel/telescope/pull/1373
+
+## [v4.16.0](https://github.com/laravel/telescope/compare/v4.15.2...v4.16.0) - 2023-08-08
+
+- [4.x] Add hotkey to clear entries without confirmation: CMD+K  by [@bradleybernard](https://github.com/bradleybernard) in https://github.com/laravel/telescope/pull/1364
+- Enhancement: Multi-Tag Filtering and Search Functionality by [@Algeneralo](https://github.com/Algeneralo) in https://github.com/laravel/telescope/pull/1367
+
+## [v4.15.2](https://github.com/laravel/telescope/compare/v4.15.1...v4.15.2) - 2023-07-13
+
+- [4.x] Fixes unexpected jobs on Vapor by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/telescope/pull/1363
+
+## [v4.15.1](https://github.com/laravel/telescope/compare/v4.15.0...v4.15.1) - 2023-06-21
+
+- Fix non existing property by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/telescope/pull/1360
+
+## [v4.15.0](https://github.com/laravel/telescope/compare/v4.14.6...v4.15.0) - 2023-06-08
+
+- Feature/copy to clipboard by @diogogomeswww in https://github.com/laravel/telescope/pull/1356
+
+## [v4.14.6](https://github.com/laravel/telescope/compare/v4.14.5...v4.14.6) - 2023-06-03
+
+- Show list of headers when present by @timacdonald in https://github.com/laravel/telescope/pull/1355
+
+## [v4.14.5](https://github.com/laravel/telescope/compare/v4.14.4...v4.14.5) - 2023-06-02
+
+- Avoids serialialisation of exception traces by @nunomaduro in https://github.com/laravel/telescope/pull/1354
+
+## [v4.14.4](https://github.com/laravel/telescope/compare/v4.14.3...v4.14.4) - 2023-05-29
+
+- Fixes jobs saying "pending" forever by @nunomaduro in https://github.com/laravel/telescope/pull/1349
+- Prevent Memory Leak when using hideRequestParameters and hideRequestHeaders by @danilopinotti in https://github.com/laravel/telescope/pull/1350
+
+## [v4.14.3](https://github.com/laravel/telescope/compare/v4.14.2...v4.14.3) - 2023-05-19
+
+- Add duration to HTTP Client watcher by @DougSisk in https://github.com/laravel/telescope/pull/1348
 
 ## [v4.14.2](https://github.com/laravel/telescope/compare/v4.14.1...v4.14.2) - 2023-04-19
 
