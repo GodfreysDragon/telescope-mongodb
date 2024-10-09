@@ -7,11 +7,13 @@ use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Log\Events\MessageLogged;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Testing\Fakes\EventFake;
 use Laravel\Telescope\Contracts\EntriesRepository;
 use Laravel\Telescope\Contracts\TerminableRepository;
+use Laravel\Telescope\Jobs\ProcessPendingUpdates;
 use Throwable;
 
 class Telescope
@@ -117,13 +119,6 @@ class Telescope
      * @var bool
      */
     public static $shouldRecord = false;
-
-    /**
-     * Indicates if Telescope migrations will be run.
-     *
-     * @var bool
-     */
-    public static $runsMigrations = true;
 
     /**
      * Register the Telescope watchers and start recording if necessary.
@@ -664,7 +659,18 @@ class Telescope
                 $batchId = Str::orderedUuid()->toString();
 
                 $storage->store(static::collectEntries($batchId));
-                $storage->update(static::collectUpdates($batchId));
+
+                $updateResult = $storage->update(static::collectUpdates($batchId)) ?: Collection::make();
+
+                if (! isset($_ENV['VAPOR_SSM_PATH'])) {
+                    $updateResult->whenNotEmpty(fn ($pendingUpdates) => rescue(fn () => ProcessPendingUpdates::dispatch(
+                        $pendingUpdates,
+                    )->onConnection(
+                        config('telescope.queue.connection')
+                    )->onQueue(
+                        config('telescope.queue.queue')
+                    )->delay(now()->addSeconds(10))));
+                }
 
                 if ($storage instanceof TerminableRepository) {
                     $storage->terminate();
@@ -720,10 +726,10 @@ class Telescope
      */
     public static function hideRequestHeaders(array $headers)
     {
-        static::$hiddenRequestHeaders = array_merge(
+        static::$hiddenRequestHeaders = array_values(array_unique(array_merge(
             static::$hiddenRequestHeaders,
             $headers
-        );
+        )));
 
         return new static;
     }
@@ -752,10 +758,10 @@ class Telescope
      */
     public static function hideResponseParameters(array $attributes)
     {
-        static::$hiddenResponseParameters = array_merge(
+        static::$hiddenResponseParameters = array_values(array_unique(array_merge(
             static::$hiddenResponseParameters,
             $attributes
-        );
+        )));
 
         return new static;
     }
@@ -809,17 +815,5 @@ class Telescope
             'timezone' => config('app.timezone'),
             'recording' => ! cache('telescope:pause-recording'),
         ];
-    }
-
-    /**
-     * Configure Telescope to not register its migrations.
-     *
-     * @return static
-     */
-    public static function ignoreMigrations()
-    {
-        static::$runsMigrations = false;
-
-        return new static;
     }
 }
